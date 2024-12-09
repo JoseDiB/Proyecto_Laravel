@@ -1,0 +1,190 @@
+/* Resetear estilos básicos */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; 
+    color: #e0e0e0; 
+}
+
+/* Contenedor principal */
+.contenedor-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e; 
+}
+
+/* Caja del formulario de login */
+.caja-login {
+    background-color: #2a2a2a; 
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); 
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: #e0e0e0; 
+}
+
+/* Título */
+.caja-login h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #61dafb; 
+}
+
+/* Grupo de inputs */
+.grupo-input {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.grupo-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #e0e0e0; 
+}
+
+.grupo-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #1e1e1e; 
+    color: #e0e0e0; 
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.grupo-input input:focus {
+    border-color: #61dafb; 
+}
+
+.grupo-input.recuerdame {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    color: #888; 
+}
+
+#recuerdame {
+    width: 10%;
+}
+
+/* Botón de login */
+.boton-login {
+    background-color: #61dafb; 
+    color: #1e1e1e; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.boton-login:hover {
+    background-color: #21a1f1;
+}
+
+/* Enlace de registro */
+.link-registro {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888; 
+}
+
+.link-registro a {
+    color: #61dafb; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-registro a:hover {
+    color: #21a1f1; 
+}
+
+/* Contenedor principal */
+.contenedorU {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #2a2a2a; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); 
+    color: #e0e0e0; 
+}
+
+/* Título */
+.contenedorU > h1 {
+    text-align: center;
+    color: #61dafb;
+    margin-bottom: 20px;
+}
+
+
+.tabla-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    color: #e0e0e0; 
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+    text-align: left;
+    padding: 10px 15px;
+    border: 1px solid #555555; 
+}
+
+.tabla-usuarios th {
+    background-color: #61dafb; 
+    color: #1e1e1e; 
+    font-weight: bold;
+}
+
+.tabla-usuarios tr:nth-child(even) {
+    background-color: #2a2a2a; 
+}
+
+.tabla-usuarios tr:hover {
+    background-color: #3a3a3a; 
+}
+
+
+.btn-editar {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #28a745; 
+    color: #e0e0e0; 
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+    background-color: #218838; 
+}
+
+.btn-eliminar {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #e0e0e0; 
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333; 
+}

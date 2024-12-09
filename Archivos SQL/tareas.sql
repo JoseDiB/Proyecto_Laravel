@@ -1,0 +1,21 @@
+CREATE TABLE tareas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nif VARCHAR(20) NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(100) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    descripcion TEXT NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    direccion VARCHAR(255) NOT NULL,
+    poblacion VARCHAR(100) NOT NULL,
+    codigopostal VARCHAR(10) NOT NULL,
+    provincia VARCHAR(100) NOT NULL,
+    estado CHAR(1) NOT NULL CHECK (estado IN ('B', 'P', 'R', 'C')),
+    operario VARCHAR(100) NOT NULL,
+    fechacreacion DATE NOT NULL,
+    fecharealizacion DATE NOT NULL,
+    anotacionesanteriores TEXT,
+    anotacionesposteriores TEXT,
+    ficheroresumen VARCHAR(255),
+    fotostrabajo VARCHAR(255)
+);

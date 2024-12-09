@@ -1,0 +1,763 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+#contenido{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#tablaTareas {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: left;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#tablaTareas thead {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#tablaTareas thead th {
+    padding: 12px 15px;
+    border-bottom: 2px solid #e1e1e1;
+}
+
+#tablaTareas tbody tr {
+    text-align: center;
+    border-bottom: 1px solid #e1e1e1;
+    transition: background-color 0.3s;
+}
+
+#tablaTareas tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tablaTareas tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#tablaTareas td {
+    padding: 12px 15px;
+}
+
+#tablaTareas td a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#tablaTareas td a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+#tablaTareas tbody tr:last-child {
+    border-bottom: none;
+}
+#paginacion {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 0;
+    gap: 5px;
+}
+
+#paginacion .btn {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #007BFF;
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#paginacion .btn:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+#paginacion .btn.active {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+    pointer-events: none;
+}
+
+#asideIzquierdo {
+    display: flex;
+    background-color: #5ea2ea; 
+    color: #fff;
+    width: 10%;
+    height: 90%;
+    float: left;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#asideIzquierdo > ul{
+    margin-top: 64%;
+}
+
+#encabezado {
+    background-color: #5ea2ea; 
+    color: #fff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    float: left;
+    width: 90%;
+    height: 12%;
+    align-items: center;
+    flex-direction: column;
+}
+#cuerpo {
+    float: left;
+    overflow: scroll;
+    width: 90%;
+    height: 78%;
+    background-color: #fff; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* Contenedor del formulario */
+.FormularioTarea {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Estilo del legend */
+.FormularioTarea legend {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas */
+.FormularioTarea label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Inputs y textarea */
+.FormularioTarea input[type="text"],
+.FormularioTarea input[type="date"],
+.FormularioTarea select,
+.FormularioTarea textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.FormularioTarea input[type="text"]:focus,
+.FormularioTarea input[type="date"]:focus,
+.FormularioTarea select:focus,
+.FormularioTarea textarea:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* Botón de envío */
+.FormularioTarea button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.FormularioTarea button[type="submit"]:hover {
+    background-color: #45A049;
+}
+
+/* Mensajes de error */
+.FormularioTarea .error {
+    color: #d9534f;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Espaciado entre los elementos */
+.FormularioTarea fieldset {
+    border: none;
+    padding: 0;
+}
+
+.FormularioTarea br {
+    display: none; 
+}
+#confBorrar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fef6f6;
+    border: 1px solid #f5c2c7;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+table {
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 10px;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+thead tr {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+}
+
+thead th {
+    padding: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+tbody td {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#confBorrar h2 {
+    margin-bottom: 20px;
+    color: #d32f2f;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#confBorrar p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+#confBorrar p:nth-child(2) {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+#confBorrar p:nth-child(odd) {
+    background: #fdf2f2;
+    padding: 5px;
+    border-radius: 5px;
+}
+#tablaTareas td:nth-last-child(-n+4) {
+        width: 10px !important; 
+        text-align: center; 
+        padding: 0px 0px;
+    }
+    #tablaTareas td:nth-child(3) {
+        width: 10px !important; 
+        text-align: center; 
+        padding: 0px 0px;
+    }
+#borrar {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    background-color: #d32f2f; 
+    color: #fff;
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+#borrar:hover {
+    background-color: #b71c1c; 
+    transform: scale(1.05); 
+}
+ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    background-color: #282c34; 
+    border-radius: 8px; 
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+ul li {
+    display: inline-block; 
+}
+
+ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none; 
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+ul li a:hover {
+    background-color: #61dafb; 
+    color: #282c34; 
+}
+
+ul li a:active {
+    background-color: #21a1f1; 
+}
+/* Estilo general del formulario */
+#completarTarea {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas de los campos */
+#completarTarea label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Espaciado entre los campos */
+#completarTarea input[type="radio"],
+#completarTarea input[type="date"],
+#completarTarea textarea {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Radio buttons */
+#completarTarea input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Campo de fecha */
+#completarTarea input[type="date"] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+/* Área de texto */
+#completarTarea textarea {
+    width: calc(100% - 10px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 16px;
+}
+
+/* Botón */
+#completarTarea button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#completarTarea button:hover {
+    background-color: #0056b3;
+}
+#cajaFiltrado {
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    padding: 20px; 
+    max-width: 400px; 
+    margin: 20px auto; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+#cajaFiltrado form div {
+    margin-bottom: 15px; 
+}
+
+#cajaFiltrado label {
+    display: block; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    color: #333; 
+}
+#cajaFiltrado select{
+    width: 100% !important; 
+}
+#cajaFiltrado select,
+#cajaFiltrado input[type="text"] {
+    width: 80%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 14px; 
+    background-color: #fff; 
+    transition: border-color 0.3s ease; 
+}
+
+#cajaFiltrado select:focus,
+#cajaFiltrado input[type="text"]:focus {
+    border-color: #007bff; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+#cajaFiltrado button {
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    width: 100%; 
+}
+
+#cajaFiltrado button:hover {
+    background-color: #0056b3; 
+}
+#cajaTabla{
+    margin-right: 4%;
+    float: left;
+    width: 70%;
+}
+#completarTarea br {
+    margin-bottom: 10px;
+}
+/* Estilos para la caja de cerrar sesión */
+#cajaCerrarSesion {
+    margin-top: 1%;
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    
+}
+#cajaCerrarSesion > div{
+    width: 50%;
+    background-color: #f0f8ff; 
+    padding: 10px 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    font-family: 'Arial', sans-serif; 
+    font-size: 16px; 
+    color: #333; 
+}
+
+/* Estilo para el texto del usuario */
+#cajaCerrarSesion span {
+    font-weight: bold;
+    color: #007bff; 
+    margin-right: 10px; 
+}
+
+/* Estilo para la hora */
+#cajaCerrarSesion .hora {
+    font-style: italic; 
+    color: #555; 
+}
+
+/* Estilo para el enlace */
+#cajaCerrarSesion a {
+    text-decoration: none; 
+    color: #ff4d4f; 
+    font-weight: bold; 
+    transition: color 0.3s ease; 
+}
+
+/* Enlace al pasar el ratón */
+#cajaCerrarSesion a:hover {
+    color: #ff0000; 
+}
+
+#footer {
+    float: left;
+    background-color: #5ea2ea; 
+    color: #fff; 
+    width: 100%;
+    height: 10%;
+}
+/* Contenedor principal del formulario */
+.formulario-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f0f2f5;
+}
+
+/* Estilo del formulario */
+#formAñadirU {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Título del formulario */
+#formAñadirU h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Grupo de formulario */
+.grupo-formulario {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.grupo-formulario label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.grupo-formulario input,
+.grupo-formulario select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario select:focus {
+    border-color: #007bff;
+}
+
+/* Botón de envío */
+.boton-enviar {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.boton-enviar:hover {
+    background-color: #0056b3;
+}
+#imagen{
+    display: flex !important;
+    width: 2% !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+#imagen-config{
+    width: 20px;
+    height: 20px;
+}
+#configuracion-contenedor {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Título */
+#titulo-configuracion {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+/* Formulario */
+.formulario-configuracion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Campos */
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.etiqueta {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+.input, .select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input:focus, .select:focus {
+    border-color: #007BFF;
+}
+
+/* Botón */
+#boton-guardar {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#boton-guardar:hover {
+    background-color: #0056b3;
+}
+
+#cuerpoDetalles{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+.tablaDetalles  {
+    
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f9;
+}
+
+.tablaDetalles > table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.tablaDetalles  th, td {
+    
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.tablaDetalles th {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+}
+.tablaDetalles td {
+    text-align: center;
+}
+
+.tablaDetalles tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tablaDetalles {
+    margin: auto;
+    max-width: 90%;
+}
+
+.tituloDetalles {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #444;
+}
